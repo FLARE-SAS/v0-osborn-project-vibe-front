@@ -1,0 +1,10 @@
+@reference 'tailwindcss';
+
+.tooltip-content {
+  @apply text-grey-50 max-w-[181px] rounded-md bg-black p-2 text-[10px] leading-[16px] font-medium;
+
+  .arrow-tooltip {
+    background: #000000 !important;
+    fill: #000000 !important;
+  }
+}

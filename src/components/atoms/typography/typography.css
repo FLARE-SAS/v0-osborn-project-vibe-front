@@ -1,0 +1,5 @@
+@reference "tailwindcss";
+
+.caption-medium {
+  @apply text-[10px] leading-[16px] font-medium;
+}
