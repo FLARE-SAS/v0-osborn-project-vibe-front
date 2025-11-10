@@ -22,7 +22,7 @@ export const Tooltip = ({ className, children, size = TooltipSize.LABEL, tooltip
     <TooltipProvider>
       <TooltipTrigger asChild>
         <Button variant="ghost" className="flex items-center gap-[6px] h-auto p-0 hover:bg-transparent">
-          {children && <Label className="text-grey-300 text-[10px] leading-[16px]">{children}</Label>}
+          {children && <Label className="text-grey-300 text-xs leading-4 font-medium">{children}</Label>}
           <ExclamationIcon
             className={cn(
               "text-grey-200",

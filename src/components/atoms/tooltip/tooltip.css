@@ -1,7 +1,11 @@
 @reference 'tailwindcss';
 
 .tooltip-content {
-  @apply text-grey-50 max-w-[181px] rounded-md bg-black p-2 text-[10px] leading-[16px] font-medium;
+  /* Separated Tailwind classes with proper spacing in @apply */
+  @apply text-grey-50 max-w-[181px] rounded-md bg-black p-2;
+  font-size: 10px;
+  line-height: 16px;
+  font-weight: 500;
 
   .arrow-tooltip {
     background: #000000 !important;

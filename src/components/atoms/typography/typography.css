@@ -1,5 +1,8 @@
 @reference "tailwindcss";
 
 .caption-medium {
-  @apply text-[10px] leading-[16px] font-medium;
+  /* Using standard CSS instead of arbitrary values in @apply to avoid concatenation issues */
+  font-size: 10px;
+  line-height: 16px;
+  font-weight: 500;
 }
