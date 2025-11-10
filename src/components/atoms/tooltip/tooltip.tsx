@@ -1,54 +1,38 @@
-import { ExclamationIcon } from '@/components/atoms/icons/icons';
-import { Label } from '@/components/ui/label';
-import {
-  Tooltip as TooltipProvider,
-  TooltipContent,
-  TooltipTrigger
-} from '@/components/ui/tooltip';
-import { cn } from '@/lib/utils';
-import { ReactNode } from 'react';
+import { ExclamationIcon } from "@/components/atoms/icons/icons"
+import { Label } from "@/components/ui/label"
+import { Button } from "@/components/ui/button"
+import { Tooltip as TooltipProvider, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
+import { cn } from "@/lib/utils"
+import type { ReactNode } from "react"
 
 export enum TooltipSize {
-  LABEL = 'label',
-  ICON = 'icon'
+  LABEL = "label",
+  ICON = "icon",
 }
 
 interface TooltipProps {
-  className?: string;
-  size?: TooltipSize;
-  children?: ReactNode;
-  tooltip: ReactNode;
+  className?: string
+  size?: TooltipSize
+  children?: ReactNode
+  tooltip: ReactNode
 }
 
-export const Tooltip = ({
-  className,
-  children,
-  size = TooltipSize.LABEL,
-  tooltip
-}: TooltipProps) => {
+export const Tooltip = ({ className, children, size = TooltipSize.LABEL, tooltip }: TooltipProps) => {
   return (
     <TooltipProvider>
       <TooltipTrigger asChild>
-        <button className="flex items-center gap-[6px]">
-          {children && (
-            <Label className="text-grey-300 text-[10px] leading-[16px]">
-              {children}
-            </Label>
-          )}
+        <Button variant="ghost" className="flex items-center gap-[6px] h-auto p-0 hover:bg-transparent">
+          {children && <Label className="text-grey-300 text-[10px] leading-[16px]">{children}</Label>}
           <ExclamationIcon
             className={cn(
-              'text-grey-200',
-              size === TooltipSize.ICON &&
-                'max-h-[16px] min-h-[16px] max-w-[16px] min-w-[16px]',
-              size === TooltipSize.LABEL &&
-                'max-h-[10px] min-h-[10px] max-w-[10px] min-w-[10px]'
+              "text-grey-200",
+              size === TooltipSize.ICON && "max-h-[16px] min-h-[16px] max-w-[16px] min-w-[16px]",
+              size === TooltipSize.LABEL && "max-h-[10px] min-h-[10px] max-w-[10px] min-w-[10px]",
             )}
           />
-        </button>
+        </Button>
       </TooltipTrigger>
-      <TooltipContent className={cn('tooltip-content', className)}>
-        {tooltip}
-      </TooltipContent>
+      <TooltipContent className={cn("tooltip-content", className)}>{tooltip}</TooltipContent>
     </TooltipProvider>
-  );
-};
+  )
+}

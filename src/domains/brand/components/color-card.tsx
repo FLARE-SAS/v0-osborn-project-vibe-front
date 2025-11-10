@@ -95,12 +95,13 @@ export function ColorCard({ color, style }: ColorCardProps) {
             <div className="flex items-center justify-between">
               <span className="text-white/60">HEX</span>
               <div className="flex items-center gap-2">
-                <button
+                <Button
+                  variant="ghost"
                   onClick={() => handleCopy(color.hex, "HEX")}
-                  className="text-white/80 hover:text-white transition-colors"
+                  className="text-white/80 hover:text-white transition-colors h-auto p-0 hover:bg-transparent"
                 >
                   {color.hex}
-                </button>
+                </Button>
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Button
@@ -121,12 +122,13 @@ export function ColorCard({ color, style }: ColorCardProps) {
             <div className="flex items-center justify-between">
               <span className="text-white/60">RGB</span>
               <div className="flex items-center gap-2">
-                <button
+                <Button
+                  variant="ghost"
                   onClick={() => handleCopy(`${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}`, "RGB")}
-                  className="text-white/80 hover:text-white transition-colors"
+                  className="text-white/80 hover:text-white transition-colors h-auto p-0 hover:bg-transparent"
                 >
                   {color.rgb.r}, {color.rgb.g}, {color.rgb.b}
-                </button>
+                </Button>
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Button
@@ -149,13 +151,18 @@ export function ColorCard({ color, style }: ColorCardProps) {
                 <span className="text-white/60">CMYK</span>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <button onClick={handleToggleCmykLock}>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={handleToggleCmykLock}
+                      className="w-4 h-4 p-0 hover:bg-transparent"
+                    >
                       {color.isCmykLocked ? (
                         <Lock className="w-3 h-3 text-white/40" />
                       ) : (
                         <Unlock className="w-3 h-3 text-yellow-500" />
                       )}
-                    </button>
+                    </Button>
                   </TooltipTrigger>
                   <TooltipContent>
                     {color.isCmykLocked ? "Locked (auto-calculated)" : "Manual mode active"}
@@ -163,14 +170,15 @@ export function ColorCard({ color, style }: ColorCardProps) {
                 </Tooltip>
               </div>
               <div className="flex items-center gap-2">
-                <button
+                <Button
+                  variant="ghost"
                   onClick={() =>
                     handleCopy(`${color.cmyk.c}, ${color.cmyk.m}, ${color.cmyk.y}, ${color.cmyk.k}`, "CMYK")
                   }
-                  className="text-white/80 hover:text-white transition-colors"
+                  className="text-white/80 hover:text-white transition-colors h-auto p-0 hover:bg-transparent"
                 >
                   {color.cmyk.c}, {color.cmyk.m}, {color.cmyk.y}, {color.cmyk.k}
-                </button>
+                </Button>
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Button

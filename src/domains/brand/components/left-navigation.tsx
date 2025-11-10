@@ -1,6 +1,7 @@
 "use client"
 
 import { ArrowLeft } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 interface LeftNavigationProps {
@@ -19,9 +20,13 @@ export function LeftNavigation({ activeSection }: LeftNavigationProps) {
   return (
     <aside className="fixed left-0 top-[120px] w-[115px] h-[calc(100vh-120px)] flex flex-col items-end pr-6 z-40">
       {/* Back Button */}
-      <button className="mb-8 opacity-80 hover:opacity-100 transition-smooth">
+      <Button
+        variant="ghost"
+        size="icon"
+        className="mb-8 opacity-80 hover:opacity-100 transition-smooth hover:bg-transparent"
+      >
         <ArrowLeft className="w-5 h-5" />
-      </button>
+      </Button>
 
       {/* Navigation List */}
       <nav className="flex-1 relative">

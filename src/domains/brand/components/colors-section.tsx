@@ -56,7 +56,7 @@ export function ColorsSection() {
         {/* Toolbar */}
         <div className="flex items-center gap-3 h-[43px]">
           <Button
-            variant="ghost"
+            variant="secondary"
             size="sm"
             onClick={handleSelectAll}
             disabled={!hasColors}
@@ -71,7 +71,7 @@ export function ColorsSection() {
           </Button>
 
           <Button
-            variant="ghost"
+            variant="secondary"
             size="sm"
             onClick={() => setIsCreateGroupModalOpen(true)}
             disabled={!hasColors}
